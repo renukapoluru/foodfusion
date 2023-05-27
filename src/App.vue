@@ -41,13 +41,13 @@ export default {
     nutritionist: true,
     signedIn: false
   }),
-  methods: {
-    mounted(){
-      console.log('Inside mounted');
+  beforeMount() {
+    console.log('Inside mounted');
       if(localStorage.getItem('userSignedIn') == "true") {
         this.signedIn = true;
       }
-    },
+  },
+  methods: {
     signInUser() {
       localStorage.setItem('userSignedIn', "true");
       this.signedIn = true;
