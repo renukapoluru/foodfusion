@@ -103,4 +103,14 @@ nav a.router-link-exact-active {
 .fixed-bottom-nav a.router-link-active {
     color: #42b983;
 }
+
+#app  button.button.is-primary {
+    display: block;
+    width: 100%;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 35px;
+    background:#42b983;
+}
 </style>
