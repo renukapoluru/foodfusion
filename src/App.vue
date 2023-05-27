@@ -1,9 +1,10 @@
 <template>
   <div id="app">
+    
+    <div v-if="signedIn ">
     <div class="header-logo">
       <img src="@/assets/FoodFusion.jpg" />
     </div>
-    <div v-if="signedIn">
       <div class="fixed-bottom-nav" v-if="nutritionist">
         <ul>
             
@@ -25,10 +26,14 @@
               </b-icon></router-link></li>
           </ul> 
         </div>
-      <router-view/>
     </div>
-    <div v-else>
-      <SignIn v-on:signIn="signInUser()"/>
+
+    <div v-if="signedIn || introDone">
+
+<router-view/>
+</div>
+    <div v-else-if="!signedIn ">
+      <SignIn v-if="!introDone" v-on:signIn="signInUser()"/>
     </div>
   </div>
 </template>
@@ -39,18 +44,18 @@ import SignIn from './components/SignIn.vue';
 export default {
   data: () => ({
     nutritionist: true,
-    signedIn: false
+    signedIn: false,
+    introDone: false
   }),
   beforeMount() {
-    console.log('Inside mounted');
       if(localStorage.getItem('userSignedIn') == "true") {
         this.signedIn = true;
       }
   },
   methods: {
     signInUser() {
-      localStorage.setItem('userSignedIn', "true");
-      this.signedIn = true;
+      this.introDone = true;
+      this.$router.push('/sign-in');
     }
   },
   components: {
