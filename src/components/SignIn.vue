@@ -91,4 +91,8 @@ export default {
     height: 30vh;
     width: auto;
 }
+
+.signup-flow-bottom h5 {
+  margin-top:10px;
+}
 </style>
