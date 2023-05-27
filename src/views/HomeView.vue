@@ -84,7 +84,7 @@ export default {
   })
 }
 </script>
-<style>
+<style scoped>
 h4.side-lines-header {
     font-size: 22px;
     font-weight: 500;

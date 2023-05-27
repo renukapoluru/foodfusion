@@ -2,13 +2,31 @@
   <div id="app">
     
     <div>
-    <!-- <div class="header-logo">
-      <img src="@/assets/FoodFusion.jpg" />
-    </div> -->
 
 
 <router-view/>
       <div class="fixed-bottom-nav" v-if="nutritionist">
+        <ul>
+            
+            <li><router-link to="/" exact><b-icon
+              icon="home"
+                  size="is-large">
+              </b-icon></router-link></li>
+              <li><router-link exact 
+                  to="/meal-plans"
+                  type="is-link"><b-icon
+                  icon="rice"
+                  size="is-large">
+              </b-icon></router-link></li>
+              <li><router-link exact
+                  to="/account"
+                  type="is-link"><b-icon
+                  icon="account"
+                  size="is-large">
+              </b-icon></router-link></li>
+          </ul> 
+        </div>
+      <div class="fixed-bottom-nav customer" v-else>
         <ul>
             
             <li><router-link to="/" exact><b-icon
@@ -51,6 +69,7 @@ export default {
         this.nutritionist = true;
       } else {
         this.nutritionist = false;
+        this.$router.push('/client-home');
       }
   }
 }
