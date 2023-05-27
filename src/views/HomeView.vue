@@ -4,6 +4,7 @@
     <h4 class="side-lines-header">NEW CLIENTS</h4>
     <div class="clients">
       <div class="client" v-for="client in clients" :key="client.name">
+          <router-link to="/client"></router-link>
           <div class="client-image">
             <img v-bind:src="client.image" :alt="client.name"/>
           </div>
@@ -29,6 +30,7 @@ export default {
   data: () => ({
     clients: [
       {
+        id: 1,
         name: 'John Doe',
         age: '27',
         category: 'Skin Care',
@@ -36,6 +38,7 @@ export default {
         image: "https://i.ibb.co/txk3dtS/young-beautiful-woman-pink-warm-sweater-natural-look-smiling-portrait-isolated-long-hair-removebg-pr.png"
       },
       {
+        id: 2,
         name: 'Prita Sharma',
         age: '32',
         category: 'Pregnancy & Lactation',
@@ -43,6 +46,7 @@ export default {
         image: "https://i.ibb.co/txk3dtS/young-beautiful-woman-pink-warm-sweater-natural-look-smiling-portrait-isolated-long-hair-removebg-pr.png"
       },
       {
+        id: 3,
         name: 'Ysh Doe',
         age: '27',
         category: 'Weight Loss',
@@ -50,6 +54,7 @@ export default {
         image: "https://i.ibb.co/txk3dtS/young-beautiful-woman-pink-warm-sweater-natural-look-smiling-portrait-isolated-long-hair-removebg-pr.png"
       },
       {
+        id: 1,
         name: 'John Doe',
         age: '27',
         category: 'Weight Loss',
@@ -57,6 +62,7 @@ export default {
         image: "https://i.ibb.co/txk3dtS/young-beautiful-woman-pink-warm-sweater-natural-look-smiling-portrait-isolated-long-hair-removebg-pr.png"
       },
       {
+        id: 1,
         name: 'John Doe',
         age: '27',
         category: 'Weight Loss',
@@ -64,6 +70,7 @@ export default {
         image: "https://i.ibb.co/txk3dtS/young-beautiful-woman-pink-warm-sweater-natural-look-smiling-portrait-isolated-long-hair-removebg-pr.png"
       },
       {
+        id: 1,
         name: 'John Doe',
         age: '27',
         category: 'Weight Loss',
@@ -120,6 +127,15 @@ h4.side-lines-header:after {
 .clients > .client {
     width: 48%;
     margin-bottom: 25px;
+    position: relative;
+}
+
+.clients > .client a {
+  position: absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
 }
 
 .clients .client .client-image {

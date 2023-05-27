@@ -11,50 +11,68 @@
         </div>
         <div class="meals">
           <div class="add-meal-modal" v-if="meal.showAddMeal">
-          <AddMeal :mealType="meal.type" />
+          <AddMeal :mealId="meal.id" @addMeal="addMeal" />
         </div>
-          <div v-if="meal.meals.length"></div>
+          <div v-if="meal.meals.length">
+            <Meal v-for="meal in meal.meals" :meal="meal" :key="meal.name"/>
+
+          </div>
           <p class="no-meal" v-else>No meals found. Add a meal!</p>
         </div>
       </div>
+
+      <b-button type="is-primary">CREATE</b-button>
     </div>
   </div>
 </template>
 <script>
 import AddMeal from '@/components/AddMeal.vue';
+import Meal from '@/components/Meal.vue';
 
 
 export default {
     data: () => ({
         meals: [
             {
+                id: 0,
                 type: "Breakfast",
                 meals: [],
                 showAddMeal: false
             },
             {
+                id:1,
                 type: "Mid-Snacks",
                 meals: [],
                 showAddMeal: false
             },
             {
+                id:2,
                 type: "Lunch",
                 meals: [],
                 showAddMeal: false
             },
             {
+                id:3,
                 type: "Evening Mid-Snacks",
                 meals: [],
                 showAddMeal: false
             },
             {
+                id:4,
                 type: "Dinner",
                 meals: [],
                 showAddMeal: false
             },
         ],
     }),
-    components: { AddMeal }
+    components: { AddMeal, Meal },
+    methods: {
+      addMeal(meal) {
+        console.log('add meal called create meal plan', meal);
+        this.meals[meal.mealId].meals.push(meal.option);
+        console.log(this.meals);
+      }
+    }
 }
 </script>
 <style>
