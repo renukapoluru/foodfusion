@@ -52,6 +52,16 @@ const routes = [
     name: 'signin',
     component: () => import(/* webpackChunkName: "about" */ '../views/SignIn.vue')
   },
+  {
+    path: '/create-account',
+    name: 'create-account',
+    component: () => import(/* webpackChunkName: "about" */ '../views/CreateAccount.vue')
+  },
+  {
+    path: '/introduction',
+    name: 'introduction',
+    component: () => import(/* webpackChunkName: "about" */ '../views/IntroductionView.vue')
+  },
 ]
 
 const router = new VueRouter({

@@ -1,5 +1,8 @@
 <template>
   <div class="home page-view">
+    <div class="header-logo">
+      <img src="@/assets/FoodFusion.jpg" />
+    </div> 
     <div class="home-content">
     <h4 class="side-lines-header">NEW CLIENTS</h4>
     <div class="clients">

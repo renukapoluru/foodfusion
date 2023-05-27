@@ -71,7 +71,7 @@ export default {
     position: absolute;
 
     right: 25px;
-    top: 125px;
+    top: 20px;
 }
 
 .account .personal-info input.input {

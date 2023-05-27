@@ -1,10 +1,13 @@
 <template>
   <div id="app">
     
-    <div v-if="signedIn ">
-    <div class="header-logo">
+    <div>
+    <!-- <div class="header-logo">
       <img src="@/assets/FoodFusion.jpg" />
-    </div>
+    </div> -->
+
+
+<router-view/>
       <div class="fixed-bottom-nav" v-if="nutritionist">
         <ul>
             
@@ -27,39 +30,28 @@
           </ul> 
         </div>
     </div>
-
-    <div v-if="signedIn || introDone">
-
-<router-view/>
-</div>
-    <div v-else-if="!signedIn ">
-      <SignIn v-if="!introDone" v-on:signIn="signInUser()"/>
-    </div>
   </div>
 </template>
 <script lang="ts">
 import router from './router'
-import SignIn from './components/SignIn.vue';
 
 export default {
   data: () => ({
-    nutritionist: true,
+    nutritionist: false,
     signedIn: false,
     introDone: false
   }),
   beforeMount() {
       if(localStorage.getItem('userSignedIn') == "true") {
-        this.signedIn = true;
+        
+      } else {
+        this.$router.push('/introduction');
       }
-  },
-  methods: {
-    signInUser() {
-      this.introDone = true;
-      this.$router.push('/sign-in');
-    }
-  },
-  components: {
-    SignIn
+      if(localStorage.getItem('role') == "nutritionist") {
+        this.nutritionist = true;
+      } else {
+        this.nutritionist = false;
+      }
   }
 }
 </script>
@@ -149,5 +141,21 @@ h4 {
 
 .header-logo img {
     height: 70px;
+}
+.go-back {
+    display: flex;
+    position: fixed;
+    left: 20px;
+    top: 20px;
+    z-index: 99999;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    line-height: 1;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff63;
 }
 </style>

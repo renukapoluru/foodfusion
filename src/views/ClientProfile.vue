@@ -1,11 +1,14 @@
 <template>
   <div class="page-view client-profile">
+    <div class="go-back" @click="$router.go(-1)">
+    <b-icon size="is-medium" icon="chevron-left"></b-icon>
+  </div>
     <div class="client-image">
       <img src="https://i.ibb.co/txk3dtS/young-beautiful-woman-pink-warm-sweater-natural-look-smiling-portrait-isolated-long-hair-removebg-pr.png" />
     </div>
     <div class="client-info">
       <h4>{{ client.name  }}</h4>
-      <h4>{{ client.type  }}</h4>
+      <h5>{{ client.type  }}</h5>
     </div>
   </div>
 </template>

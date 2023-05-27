@@ -17,7 +17,7 @@
           <div v-else>
 
       <b-button type="is-primary" @click="emitSignIn()">SIGN IN</b-button>
-      <h5>Create an Account</h5>
+      <h5 @click="createAccount()">Create an Account</h5>
           </div>
         </div>
   </div>
@@ -55,6 +55,9 @@ export default {
     },
     emitSignIn() {
       this.$emit('signIn');
+    },
+    createAccount() {
+      this.$router.push('/create-account');
     }
   }
 }

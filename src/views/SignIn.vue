@@ -54,6 +54,10 @@ export default {
     }
   }),
   methods: {
+    signIn() {
+      localStorage.setItem('userSignedIn',"true");
+      this.$router.push('/');
+    },  
     onSuccess(googleUser) {
         console.log(googleUser);
 
