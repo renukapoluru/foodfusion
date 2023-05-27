@@ -1,5 +1,12 @@
 <template>
   <div class="complete-profile page-view">
+    <div class="speaker" style="display: flex;justify-content: space-between;width: 13rem;box-shadow: 0 0 13px #0000003d;border-radius: 5px;">
+         <p id="action" style="color: grey;font-weight: 800; padding: 0; padding-left: 2rem;"></p>
+         <button onclick="runSpeechRecog()" style="border: transparent;padding: 0 0.5rem;">
+            Speech
+         </button>
+      </div>
+    <h3 id="output" class="hide"></h3>
   </div>
 </template>
 <script lang="ts">

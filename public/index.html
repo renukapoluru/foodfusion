@@ -11,7 +11,24 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">  
     <script src="https://apis.google.com/js/platform.js" async defer></script>
-
+    <script>
+      runSpeechRecog = () => {
+         document.getElementById("output").innerHTML = "Loading text...";
+         var output = document.getElementById('output');
+         var action = document.getElementById('action');
+         let recognization = new webkitSpeechRecognition();
+         recognization.onstart = () => {
+            action.innerHTML = "Listening...";
+         }
+         recognization.onresult = (e) => {
+            var transcript = e.results[0][0].transcript;
+            output.innerHTML = transcript;
+            output.classList.remove("hide")
+            action.innerHTML = "";
+         }
+         recognization.start();
+      }
+   </script>
   </head>
   <body>
     <noscript>
