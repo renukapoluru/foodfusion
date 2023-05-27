@@ -38,7 +38,8 @@ export default {
   methods: {
     logout() {
       localStorage.removeItem('role');
-      localStorage.removeItem('signedIn');
+      localStorage.removeItem('userSignedIn');
+      this.$router.push('/sign-in');
     }
   }
 }

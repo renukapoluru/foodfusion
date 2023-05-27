@@ -19,7 +19,7 @@
         
         <b-field label="Password">
             <b-input type="password"
-                value="iwantmytreasure"
+                value=""
                 password-reveal>
             </b-input>
         </b-field>
