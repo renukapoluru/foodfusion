@@ -57,9 +57,9 @@ background: linear-gradient(90deg, rgba(197,140,251,1) 0%, rgba(150,115,250,1) 1
 .meal-plans .page-header {
   z-index: 1;
     position: relative;
-    padding: 30px 20px;
+    padding: 25px 20px;
     text-align: left;
-    font-size: 30px;
+    font-size: 26px;
     color: #ffffff;
     font-weight: 600;
 }

@@ -59,9 +59,9 @@ export default {
 .create-meal-plan .page-header {
   z-index: 1;
   position: relative;
-  padding: 30px 20px;
+  padding: 25px 20px;
   text-align: left;
-  font-size: 30px;
+  font-size: 26px;
   color: #ffffff;
   font-weight: 600;
 }
@@ -80,12 +80,12 @@ h4 {
 }
 
 .meal-section h4 {
-  font-size: 24px;
-  padding: 10px;
+  font-size: 22px;
+  padding: 10px 15px;
 }
 
 .meal-section .meals {
-  padding: 30px 20px;
+  padding: 20px 15px;
 }
 
 .create-meal-plan .sections-container {
@@ -111,6 +111,7 @@ h4 {
     position: absolute;
     right: 20px;
     top: 16px;
+    z-index: 99;
 }
 
 .meal-section {
