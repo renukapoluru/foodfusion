@@ -61,7 +61,7 @@ export default {
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -78,7 +78,7 @@ nav a {
 }
 
 nav a.router-link-exact-active {
-  color: #42b983;
+  color: #9673fa;
 }
 .page-view {
   min-height: calc(100vh - 80px);
@@ -123,7 +123,7 @@ nav a.router-link-exact-active {
     color: #000000;
 }
 .fixed-bottom-nav a.router-link-active {
-    color: #42b983;
+    color: #9673fa;
 }
 
 #app  button.button.is-primary {
@@ -133,7 +133,7 @@ nav a.router-link-exact-active {
     font-weight: bold;
     text-transform: uppercase;
     margin-top: 35px;
-    background:#42b983;
+    background:#9673fa;
 }
 h4 {
     font-size: 22px;

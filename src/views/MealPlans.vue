@@ -50,7 +50,8 @@ export default {
 
 <style>
 .meal-plans .page-header {
-  background:url(@/assets/meal-plans.jpg);
+  background: rgb(197,140,251);
+background: linear-gradient(90deg, rgba(197,140,251,1) 0%, rgba(150,115,250,1) 100%);
   min-height: 120px;
   background-size: cover;
 }
@@ -64,16 +65,6 @@ export default {
     font-weight: 600;
 }
 
-.meal-plans .page-header:before {
-    position: absolute;
-    content: '';
-    background: #42b983d9;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-}
 .meal-plans-container {
     text-align: left;
     padding: 30px 20px;
@@ -100,7 +91,7 @@ export default {
 .meal-plans-container .meal-plan {
     box-shadow: 0 0 9px 0px #0000001f;
     border-radius: 5px;
-    background: #42b98342;
+    background: #9673fa42;
     margin-bottom: 30px;
 }
 
@@ -133,8 +124,21 @@ export default {
 .meal-plans-container .meal-plan .meal-plan-desc li:last-child:after {
     display: none;
 }
-.meal-plans-container .meal-plan:nth-child(2n+2) {
-  background: #f9476a3b;
+.meal-plans-container .meal-plan:nth-child(5n+1) {
+  
+  background: #eddfdf;
+}
+.meal-plans-container .meal-plan:nth-child(5n+2) {
+  background:#FFC1C1;
+}
+.meal-plans-container .meal-plan:nth-child(5n+3) {
+  background:#DCECE0;
+}
+.meal-plans-container .meal-plan:nth-child(5n+4) {
+  background:#FFF2C6;
+}
+.meal-plans-container .meal-plan:nth-child(5n+5) {
+  background:#D9EBFF;
 }
 
 .create-meal-plan {
@@ -145,7 +149,7 @@ export default {
 }
 
 .create-meal-plan .icon {
-    background: #42b983;
+    background: #9673fa;
     color: #ffffff;
     width: 4rem;
     height: 4rem;

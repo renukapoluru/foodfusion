@@ -189,6 +189,6 @@ export default {
     font-weight: bold;
     text-transform: uppercase;
     margin-top: 35px;
-    background:#42b983;
+    background:#9673fa;
 }
 </style>

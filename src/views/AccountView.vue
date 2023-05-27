@@ -6,7 +6,7 @@
             </b-icon>
           </div>
     <div class="profile-pic">
-      <img src="https://cdn4.vectorstock.com/i/1000x1000/82/33/person-gray-photo-placeholder-woman-vector-24138233.jpg" />
+      <img src="https://i.ibb.co/txk3dtS/young-beautiful-woman-pink-warm-sweater-natural-look-smiling-portrait-isolated-long-hair-removebg-pr.png" />
     </div>
     <div class="personal-info">
       <h4>Name</h4>
@@ -43,12 +43,13 @@ export default {
 .account .profile-pic img {
     border-radius: 100%;
     max-height: 180px;
+    background:#9673fa;
 }
 
 .edit-profile {
   position: absolute;
-  right:20px;
-  top:15px;
+  right: 25px;
+    top: 125px;
   z-index: 99;
 }
 
@@ -68,8 +69,9 @@ export default {
 }
 .account .edit-profile {
     position: absolute;
-    right: 15px;
-    top: 15px;
+
+    right: 25px;
+    top: 125px;
 }
 
 .account .personal-info input.input {
@@ -93,6 +95,6 @@ export default {
     font-weight: bold;
     text-transform: uppercase;
     margin-top: 15px;
-    background:#42b983;
+    background:#9673fa;
 }
 </style>
