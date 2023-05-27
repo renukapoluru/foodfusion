@@ -70,7 +70,7 @@ export default {
 }
 
 .sign-up-flow .icon.is-medium {
-    background: green;
+    background: #9673fa;
     height: 4rem;
     width: 4rem;
     color: #ffffff;
