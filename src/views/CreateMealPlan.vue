@@ -5,11 +5,14 @@
       <div class="meal-section" v-for="meal in meals" :key="meal.type">
         <div class="meal-type">
           <h4>{{ meal.type  }}</h4>
-          <div class="add-meal">
-            <b-icon icon="plus"></b-icon>
+          <div class="add-meal" @click="meal.showAddMeal = true">
+              <b-icon icon="plus"></b-icon>
           </div>
         </div>
         <div class="meals">
+          <div class="add-meal-modal" v-if="meal.showAddMeal">
+          <AddMeal :mealType="meal.type" />
+        </div>
           <div v-if="meal.meals.length"></div>
           <p class="no-meal" v-else>No meals found. Add a meal!</p>
         </div>
@@ -18,32 +21,40 @@
   </div>
 </template>
 <script>
+import AddMeal from '@/components/AddMeal.vue';
+
 
 export default {
-  data: () => ({
-    meals: [
-      {
-        type: 'Breakfast',
-        meals: []
-      },
-      {
-        type: 'Mid-Snacks',
-        meals: []
-      },
-      {
-        type: 'Lunch',
-        meals: []
-      },
-      {
-        type: 'Evening Mid-Snacks',
-        meals: []
-      },
-      {
-        type: 'Dinner',
-        meals: []
-      },
-    ],
-  }),
+    data: () => ({
+        meals: [
+            {
+                type: "Breakfast",
+                meals: [],
+                showAddMeal: false
+            },
+            {
+                type: "Mid-Snacks",
+                meals: [],
+                showAddMeal: false
+            },
+            {
+                type: "Lunch",
+                meals: [],
+                showAddMeal: false
+            },
+            {
+                type: "Evening Mid-Snacks",
+                meals: [],
+                showAddMeal: false
+            },
+            {
+                type: "Dinner",
+                meals: [],
+                showAddMeal: false
+            },
+        ],
+    }),
+    components: { AddMeal }
 }
 </script>
 <style>
