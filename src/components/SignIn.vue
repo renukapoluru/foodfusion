@@ -16,7 +16,8 @@
           </div>
           <div v-else>
 
-      <b-button type="is-primary">SIGN IN</b-button>
+      <b-button type="is-primary" @click="emitSignIn()">SIGN IN</b-button>
+      <h5>Create an Account</h5>
           </div>
         </div>
   </div>
@@ -51,6 +52,9 @@ export default {
     nextStep() {
       console.log('next step');
       this.currentStep = this.currentStep + 1;
+    },
+    emitSignIn() {
+      this.$emit('signIn');
     }
   }
 }

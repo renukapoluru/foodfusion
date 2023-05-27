@@ -28,7 +28,7 @@
       <router-view/>
     </div>
     <div v-else>
-      <SignIn />
+      <SignIn v-on:signIn="signInUser()"/>
     </div>
   </div>
 </template>
@@ -42,7 +42,16 @@ export default {
     signedIn: false
   }),
   methods: {
-    
+    mounted(){
+      console.log('Inside mounted');
+      if(localStorage.getItem('userSignedIn') == "true") {
+        this.signedIn = true;
+      }
+    },
+    signInUser() {
+      localStorage.setItem('userSignedIn', "true");
+      this.signedIn = true;
+    }
   },
   components: {
     SignIn
