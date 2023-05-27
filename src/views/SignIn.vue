@@ -26,7 +26,7 @@
         <b-button type="is-primary" @click="signIn()">SIGN IN</b-button>
     </div>
     <h3 class="or">OR</h3>
-    <GoogleLogin :params="params" :onSuccess="onSuccess" :onFailure="onFailure">Login</GoogleLogin>
+    <GoogleLogin :params="params" :onSuccess="alert('Hi')" :onFailure="onFailure">Login</GoogleLogin>
 
   </div>
 </template>
