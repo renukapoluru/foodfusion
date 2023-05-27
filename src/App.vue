@@ -1,12 +1,41 @@
 <template>
   <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
+    <div class="fixed-bottom-nav" v-if="nutritionist">
+      <ul>
+          
+          <li><router-link to="/" exact><b-icon
+            icon="home"
+                size="is-large">
+            </b-icon></router-link></li>
+            <li><router-link exact 
+                to="/meal-plans"
+                type="is-link"><b-icon
+                icon="rice"
+                size="is-large">
+            </b-icon></router-link></li>
+            <li><router-link exact
+                to="/account"
+                type="is-link"><b-icon
+                icon="account"
+                size="is-large">
+            </b-icon></router-link></li>
+        </ul> 
+      </div>
     <router-view/>
   </div>
 </template>
+<script lang="ts">
+import router from './router'
+
+export default {
+  data: () => ({
+    nutritionist: true,
+  }),
+  methods: {
+    
+  }
+}
+</script>
 
 <style>
 #app {
@@ -28,5 +57,50 @@ nav a {
 
 nav a.router-link-exact-active {
   color: #42b983;
+}
+.page-view {
+  min-height: calc(100vh - 80px);
+  overflow-y:scroll;
+  padding-bottom: 80px;
+}
+.fixed-bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    padding: 15px;
+    box-shadow: -1px -2px 13px 3px #0000001a;
+    z-index: 99;
+}
+
+.fixed-bottom-nav ul {
+    display: flex;
+    padding: 0;
+    list-style: none;
+    justify-content: space-between;
+}
+
+.fixed-bottom-nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.fixed-bottom-nav ul li i.mdi:before {
+    font-size: 40px;
+    line-height: 1;
+}
+
+.fixed-bottom-nav .icon.is-large {
+    height: 2rem;
+    line-height: 1;
+}
+.fixed-bottom-nav a {
+    background: transparent;
+    border: 0;
+    color: #000000;
+}
+.fixed-bottom-nav a.router-link-active {
+    color: #42b983;
 }
 </style>
