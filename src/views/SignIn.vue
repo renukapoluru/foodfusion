@@ -26,7 +26,8 @@
         <b-button type="is-primary" @click="signIn()">SIGN IN</b-button>
     </div>
     <h3 class="or">OR</h3>
-    <GoogleLogin :params="params" :onSuccess="alert('Hi')" :onFailure="onFailure">Login</GoogleLogin>
+    <!-- <GoogleLogin :params="params" :onSuccess="alert('Hi')" :onFailure="onFailure">Login</GoogleLogin> -->
+    <div id="mySignin" onclick="login()"><img src="google_image_here.png" alt="google" style="cursor:pointer;height: 60px;width: 309px;"/></div>
 
   </div>
 </template>
