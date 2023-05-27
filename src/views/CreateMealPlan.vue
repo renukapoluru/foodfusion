@@ -1,53 +1,10 @@
 <template>
   <div class="meal-plans page-view">
     <div class="page-header">
-        MEAL PLANS
-    </div>
-    <div class="meal-plans-container">
-      <div class="meal-plan">
-        <div class="meal-plan-image">
-          <h4>Keto Diet</h4>  
-        </div>
-        <div class="meal-plan-desc">
-          <ul>
-            <li><img src="@/assets/calories.png"/> Calories: 1000 kcal</li>
-            <li><img src="@/assets/meals.png"/> Protein: 40g</li>
-            <li><img src="@/assets/meals.png"/> Fat: 40g</li>
-            <li><img src="@/assets/meals.png"/> Carbs: 40g</li>
-          </ul>
-        </div>
-      </div>
-      <div class="meal-plan">
-        <div class="meal-plan-image">
-          <h4>Skin Care Diet</h4>  
-        </div>
-        <div class="meal-plan-desc">
-          <ul>
-            <li><img src="@/assets/calories.png"/>1200 kcal</li>
-            <li><img src="@/assets/meals.png"/>Protein: 50g</li>
-            <li><img src="@/assets/meals.png"/>Fat: 70g</li>
-            <li><img src="@/assets/meals.png"/>Carbs: 40g</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="create-meal-plan">
-      <router-link to="/create-meal-plan" exact>
-      <b-icon
-                icon="plus"
-                size="is-medium">
-            </b-icon></router-link>
+        CREATE MEAL PLAN
     </div>
   </div>
 </template>
-<script lang="ts">
-
-export default {
-  methods: {
-  },
-}
-</script>
-
 <style>
 .meal-plans .page-header {
   background:url(@/assets/meal-plans.jpg);
