@@ -29,13 +29,13 @@
         
         <b-field label="Password">
             <b-input type="password"
-                value="iwantmytreasure"
+                value=""
                 password-reveal>
             </b-input>
         </b-field>
         <b-field label="Password 2">
             <b-input type="password"
-                value="iwantmytreasure"
+                value=""
                 password-reveal>
             </b-input>
         </b-field>
