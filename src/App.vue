@@ -113,4 +113,9 @@ nav a.router-link-exact-active {
     margin-top: 35px;
     background:#42b983;
 }
+h4 {
+    font-size: 22px;
+    font-weight: 500;
+    text-align: left;
+}
 </style>
