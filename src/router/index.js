@@ -67,6 +67,16 @@ const routes = [
     name: 'client-home',
     component: () => import(/* webpackChunkName: "about" */ '../views/ClientHomeView.vue')
   },
+  {
+    path: '/more-about-you',
+    name: 'more-about-you',
+    component: () => import(/* webpackChunkName: "about" */ '../views/MoreAboutYou.vue')
+  },
+  {
+    path: '/consultation',
+    name: 'consultation',
+    component: () => import(/* webpackChunkName: "about" */ '../views/ConsultationView.vue')
+  },
 ]
 
 const router = new VueRouter({
