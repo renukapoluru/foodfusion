@@ -1,38 +1,51 @@
 <template>
   <div id="app">
-    <div class="fixed-bottom-nav" v-if="nutritionist">
-      <ul>
-          
-          <li><router-link to="/" exact><b-icon
-            icon="home"
-                size="is-large">
-            </b-icon></router-link></li>
-            <li><router-link exact 
-                to="/meal-plans"
-                type="is-link"><b-icon
-                icon="rice"
-                size="is-large">
-            </b-icon></router-link></li>
-            <li><router-link exact
-                to="/account"
-                type="is-link"><b-icon
-                icon="account"
-                size="is-large">
-            </b-icon></router-link></li>
-        </ul> 
-      </div>
-    <router-view/>
+    <div class="header-logo">
+      <img src="@/assets/FoodFusion.jpg" />
+    </div>
+    <div v-if="signedIn">
+      <div class="fixed-bottom-nav" v-if="nutritionist">
+        <ul>
+            
+            <li><router-link to="/" exact><b-icon
+              icon="home"
+                  size="is-large">
+              </b-icon></router-link></li>
+              <li><router-link exact 
+                  to="/meal-plans"
+                  type="is-link"><b-icon
+                  icon="rice"
+                  size="is-large">
+              </b-icon></router-link></li>
+              <li><router-link exact
+                  to="/account"
+                  type="is-link"><b-icon
+                  icon="account"
+                  size="is-large">
+              </b-icon></router-link></li>
+          </ul> 
+        </div>
+      <router-view/>
+    </div>
+    <div v-else>
+      <SignIn />
+    </div>
   </div>
 </template>
 <script lang="ts">
 import router from './router'
+import SignIn from './components/SignIn.vue';
 
 export default {
   data: () => ({
     nutritionist: true,
+    signedIn: false
   }),
   methods: {
     
+  },
+  components: {
+    SignIn
   }
 }
 </script>
@@ -117,5 +130,10 @@ h4 {
     font-size: 22px;
     font-weight: 500;
     text-align: left;
+}
+.header-logo {padding: 15px;text-align: left;}
+
+.header-logo img {
+    height: 70px;
 }
 </style>
