@@ -28,7 +28,7 @@
       <b-field label="Password">
         <b-input type="password" value="" password-reveal> </b-input>
       </b-field>
-      <b-field label="Password 2">
+      <b-field label="Confirm Password">
         <b-input type="password" value="" password-reveal> </b-input>
       </b-field>
       <b-button type="is-primary" @click="signUp()">SIGN UP</b-button>

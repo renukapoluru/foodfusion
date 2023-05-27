@@ -1,5 +1,8 @@
 <template>
   <div class="signin-page">
+    <div class="go-back" @click="$router.push('/sign-up')">
+    <b-icon size="is-medium" icon="chevron-left"></b-icon>
+  </div>
     <div class="logo">
     <img src="@/assets/FoodFusion.jpg"/>
     </div>
