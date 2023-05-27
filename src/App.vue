@@ -29,7 +29,7 @@
       <div class="fixed-bottom-nav customer" v-else>
         <ul>
             
-            <li><router-link to="/" exact><b-icon
+            <li><router-link to="/client-home" exact><b-icon
               icon="home"
                   size="is-large">
               </b-icon></router-link></li>
