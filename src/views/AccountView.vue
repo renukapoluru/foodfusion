@@ -24,6 +24,9 @@
       <b-button v-if="editMode" type="is-primary">Save</b-button>
 
     </div>
+    <div class="logout-button">
+      <b-button @click="logout()" type="is-danger">LOGOUT</b-button>
+    </div>
   </div>
 </template>
 <script>
@@ -32,6 +35,12 @@ export default {
   data: () => ({
     editMode: false,
   }),
+  methods: {
+    logout() {
+      localStorage.removeItem('role');
+      localStorage.removeItem('signedIn');
+    }
+  }
 }
 </script>
 
@@ -96,5 +105,8 @@ export default {
     text-transform: uppercase;
     margin-top: 15px;
     background:#9673fa;
+}
+.logout-button {
+  padding:0 15px;
 }
 </style>

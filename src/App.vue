@@ -123,13 +123,15 @@ nav a.router-link-exact-active {
     color: #9673fa;
 }
 
-#app  button.button.is-primary {
+#app  button.button {
     display: block;
     width: 100%;
     font-size: 20px;
     font-weight: bold;
     text-transform: uppercase;
     margin-top: 35px;
+}
+#app  button.button.is-primary {
     background:#9673fa;
 }
 h4 {
