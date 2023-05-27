@@ -48,17 +48,16 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .meal-plans .page-header {
   background: rgb(197,140,251);
 background: linear-gradient(90deg, rgba(197,140,251,1) 0%, rgba(150,115,250,1) 100%);
-  min-height: 120px;
   background-size: cover;
 }
 .meal-plans .page-header {
   z-index: 1;
     position: relative;
-    padding: 40px 20px;
+    padding: 30px 20px;
     text-align: left;
     font-size: 30px;
     color: #ffffff;
