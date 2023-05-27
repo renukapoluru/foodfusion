@@ -1,7 +1,7 @@
 <template>
   <div class="client-home client-home-view page-view">
     <div class="page-heading">
-    <h3>We're delighted to have you onboarded. Let's get begin!</h3>
+    <h3>We're delighted to have you onboard. Let's get begin!</h3>
     <h4>Here are some exclusive perks for you.</h4>
   </div>
     <div class="gradient-bg one-min-test">
