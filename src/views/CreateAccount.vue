@@ -117,6 +117,7 @@ export default {
 
 .create-account-page {
   padding: 50px 20px;
+  padding-bottom: 80px;
 }
 
 .create-account-page .logo img {
