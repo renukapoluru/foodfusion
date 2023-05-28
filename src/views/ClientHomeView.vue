@@ -18,7 +18,7 @@
     <h4 class="side-lines-header">NUTRIONISTS</h4>
     <div class="clients">
       <div class="client" v-for="client in clients" :key="client.name">
-          <router-link to="/client"></router-link>
+          <router-link to="/nutritionist"></router-link>
           <div class="client-image">
             <img v-bind:src="client.image" :alt="client.name"/>
           </div>

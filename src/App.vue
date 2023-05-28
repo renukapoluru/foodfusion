@@ -34,7 +34,7 @@
                   size="is-large">
               </b-icon></router-link></li>
               <li><router-link exact 
-                  to="/meal-plans"
+                  to="/client-meal-plans"
                   type="is-link"><b-icon
                   icon="rice"
                   size="is-large">
