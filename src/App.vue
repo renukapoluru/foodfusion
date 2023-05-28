@@ -60,11 +60,6 @@ export default {
     introDone: false
   }),
   beforeMount() {
-      if(localStorage.getItem('userSignedIn') == "true") {
-        
-      } else {
-        this.$router.push('/introduction');
-      }
       if(localStorage.getItem('role') == "nutritionist") {
         this.nutritionist = true;
       } else {

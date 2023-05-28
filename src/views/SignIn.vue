@@ -39,7 +39,6 @@
 <script>
 import GoogleLogin from 'vue-google-login';
 
-
 export default {
   name: 'SignIn',
   props: {
@@ -59,9 +58,66 @@ export default {
     }
   }),
   methods: {
-    signIn() {
+    async signIn() {
       localStorage.setItem('userSignedIn',"true");
-      this.$router.push('/home');
+      const requestOptions = {
+                  method: "POST",
+                  headers: { "Content-Type": "application/json", "x-hasura-admin-secret": "bHsf9xbpcupH13rtVcJdAxu32wgJfeGRFSWEzWfIwVaUNUj9lqIvH6THQ6Q39f5W" },
+                  body: JSON.stringify({
+                      "query": "query login {\n  LoginCredentials(where: {}) {\n    role\n    password\n    username\n  }\n}",
+                      "variables": null,
+                      "operationName": "login"
+                  })
+                };
+                fetch(`https://loyal-mayfly-19.hasura.app/v1/graphql`, requestOptions)
+                .then(response => response.json())    
+                .then(async (data) => {
+                        this.data = []
+                        console.log('Data', data.data);
+                        let emails = {};
+                        await data.data.LoginCredentials.forEach(element => {
+                          emails[element.username] = {
+                            password: element.password,
+                            role: element.role
+                          };
+                        });
+                        if(Object.keys(emails).includes(this.email)) {
+                          if(emails[this.email].password == this.password) {
+                            localStorage.setItem("userSignedIn","true");
+                            if(emails[this.email].role == "N"){
+                              localStorage.setItem("role","nutritionist");
+                            this.$router.push('/home');
+                            } else {
+                              localStorage.setItem("role","client");
+                              this.$router.push("/client-home");
+                            }
+                          } else {
+                            this.$buefy.snackbar.open({
+                              duration: 2000,
+                              message: 'Password incorrect.',
+                              type: 'is-danger',
+                              position: 'is-bottom',
+                              queue: false,
+                          })
+                          }
+                        } else {
+                          this.$buefy.snackbar.open({
+                              duration: 2000,
+                              message: 'No email found',
+                              type: 'is-danger',
+                              position: 'is-bottom',
+                              queue: false,
+                          })
+                        }
+                    })
+                    .catch((error) => {
+                        this.data = []
+                        throw error
+                    })
+                    .finally(() => {
+                        this.isFetching = false
+                    })
+      //this.$router.push('/home');
     },  
     onSuccess(googleUser) {
         console.log(googleUser);
@@ -91,6 +147,7 @@ export default {
 
 .signin-page {
     padding: 50px 20px;
+    padding-bottom:80px;
 }
 
 .signin-page .logo img {
