@@ -76,6 +76,7 @@ export default {
     window.webkitSpeechRecognition;
     const recognition = new window.SpeechRecognition();
     recognition.lang = this.lang_;
+    recognition.start();
     recognition.interimResults = true;
 
     // event current voice reco word
