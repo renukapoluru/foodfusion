@@ -20,6 +20,7 @@ export default {
 </script>
 <style scoped>
 .introduction-page {
-    padding-top: 15vh;
+    padding-top: 14vh;
+    padding-bottom:80px;
 }
 </style>
