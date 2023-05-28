@@ -27,10 +27,11 @@
             </b-input>
         </b-field>
         <b-button type="is-primary" @click="signIn()">SIGN IN</b-button>
+      <h5 @click="createAccount()">Create an Account</h5>
     </div>
     <h3 class="or">OR</h3>
     <!-- <GoogleLogin :params="params" :onSuccess="alert('Hi')" :onFailure="onFailure">Login</GoogleLogin> -->
-    <div id="mySignin" onclick="login()"><img src="google_image_here.png" alt="google" style="cursor:pointer;height: 60px;width: 309px;"/></div>
+    <div id="mySignin" onclick="login()"><img src="https://i.ibb.co/kqLg2wQ/google-signin-button.png" alt="google" style="cursor:pointer;height: auto;width: 85%;"/></div>
 
   </div>
 </template>
@@ -66,6 +67,9 @@ export default {
 
         // This only gets the user information: id, name, imageUrl and email
         console.log(googleUser.getBasicProfile());
+    },
+    createAccount() {
+      this.$router.push('/create-account');
     }
   },
   components: { GoogleLogin }
@@ -100,6 +104,10 @@ export default {
   font-size: 20px;
   font-weight: 500;
   margin:30px 0;
+}
+
+.signin-page h5 {
+  margin-top:10px;
 }
 
 </style>
