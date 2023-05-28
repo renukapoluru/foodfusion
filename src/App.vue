@@ -179,4 +179,17 @@ h4 {
     justify-content: center;
     background: #ffffff63;
 }
+
+.client-info {
+  text-align: left;
+}
+
+.client-info h4 {
+  font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 0px;
+}
+.client-info h5 {
+    color: #7a7878;
+}
 </style>

@@ -18,7 +18,8 @@ export default {
   data: () => ({
     client: {
       name: 'Prita Sharma',
-      type: 'Skin'
+      type: 'Skin',
+      assessmentScore: 80,
     }
   }),
 }

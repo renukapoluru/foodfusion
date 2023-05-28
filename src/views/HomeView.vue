@@ -6,7 +6,20 @@
     <div class="home-content">
     <h4 class="side-lines-header">NEW CLIENTS</h4>
     <div class="clients">
-      <div class="client" v-for="client in clients" :key="client.name">
+      <div class="client" v-for="client in newClients" :key="client.name">
+          <router-link to="/client"></router-link>
+          <div class="client-image">
+            <img v-bind:src="client.image" :alt="client.name"/>
+          </div>
+          <div class="client-info">
+          <h4>{{  client.name  }}</h4>
+          <h5>{{ client.category  }}</h5>
+        </div>
+      </div>
+    </div>
+    <h4 class="side-lines-header">ALL CLIENTS</h4>
+    <div class="clients">
+      <div class="client" v-for="client in newClients" :key="client.name">
           <router-link to="/client"></router-link>
           <div class="client-image">
             <img v-bind:src="client.image" :alt="client.name"/>
@@ -31,10 +44,45 @@ export default {
     HelloWorld
   },
   data: () => ({
-    clients: [
+    newClients: [
       {
         id: 1,
         name: 'John Doe',
+        age: '27',
+        category: 'Skin Care',
+        signedUpOn: '12th Apr 2023',
+        image: "https://i.ibb.co/txk3dtS/young-beautiful-woman-pink-warm-sweater-natural-look-smiling-portrait-isolated-long-hair-removebg-pr.png"
+      },
+      {
+        id: 2,
+        name: 'Prita Sharma',
+        age: '32',
+        category: 'Pregnancy & Lactation',
+        signedUpOn: '11th Apr 2023',
+        image: "https://i.ibb.co/txk3dtS/young-beautiful-woman-pink-warm-sweater-natural-look-smiling-portrait-isolated-long-hair-removebg-pr.png"
+      },
+      {
+        id: 3,
+        name: 'Ysh Doe',
+        age: '27',
+        category: 'Weight Loss',
+        signedUpOn: '12th Apr 2023',
+        image: "https://i.ibb.co/txk3dtS/young-beautiful-woman-pink-warm-sweater-natural-look-smiling-portrait-isolated-long-hair-removebg-pr.png"
+      },
+      {
+        id: 1,
+        name: 'John Doe',
+        age: '27',
+        category: 'Weight Loss',
+        signedUpOn: '12th Apr 2023',
+        image: "https://i.ibb.co/txk3dtS/young-beautiful-woman-pink-warm-sweater-natural-look-smiling-portrait-isolated-long-hair-removebg-pr.png"
+      }
+    ],
+
+    clients: [
+      {
+        id: 1,
+        name: 'Test Doe',
         age: '27',
         category: 'Skin Care',
         signedUpOn: '12th Apr 2023',
