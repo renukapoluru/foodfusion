@@ -5,7 +5,7 @@
 
 
 <router-view/>
-      <div v-if="introDone">
+      <div v-if="signedIn">
       <div class="fixed-bottom-nav" v-if="nutritionist">
         <ul>
             
@@ -64,6 +64,7 @@ export default {
   beforeMount() {
       if(localStorage.getItem('introDone') == "true" || localStorage.getItem('userSignedIn') == "true") {
         this.introDone = true;
+        this.signedIn = true;
       if(localStorage.getItem('role') == "nutritionist") {
         this.nutritionist = true;
       } else {
