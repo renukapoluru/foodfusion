@@ -14,6 +14,11 @@ export default {
       this.$router.push('/more-about-you');
     }
   },
+  methods: {
+    showSnackbar() {
+      this.$buefy.snackbar.open(`Consultation scheduled successfully. You will receive an email with the communication`);
+    }
+  }
 }
 </script>
 

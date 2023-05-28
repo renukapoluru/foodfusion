@@ -11,6 +11,7 @@ export default {
   },
   methods: {
     signInUser() {
+      localStorage.setItem('introDone', "true");
       this.$router.push('/sign-in');
     }
   }

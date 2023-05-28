@@ -101,7 +101,7 @@
                 </option>
             </b-select>
       </div>
-      <b-button type="is-primary">SCHEDULE CONSULTATION</b-button>
+      <b-button @click="showSnackbar()" type="is-primary">SCHEDULE CONSULTATION</b-button>
     </div>
     
   </div>
@@ -183,6 +183,9 @@ export default {
   methods: {
     getStepName(name) {
       return name;
+    },
+    showSnackbar() {
+      this.$buefy.snackbar.open(`Consultation scheduled successfully. You will receive an email with the communication`);
     },
     runSpeechRecog(fieldName) {
       window.SpeechRecognition =

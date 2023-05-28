@@ -5,6 +5,7 @@
 
 
 <router-view/>
+      <div v-if="introDone">
       <div class="fixed-bottom-nav" v-if="nutritionist">
         <ul>
             
@@ -47,6 +48,7 @@
               </b-icon></router-link></li>
           </ul> 
         </div>
+      </div>
     </div>
   </div>
 </template>
@@ -60,12 +62,16 @@ export default {
     introDone: false
   }),
   beforeMount() {
+      if(localStorage.getItem('introDone') == "true") {
       if(localStorage.getItem('role') == "nutritionist") {
         this.nutritionist = true;
       } else {
         this.nutritionist = false;
         this.$router.push('/client-home');
       }
+    } else {
+      this.$router.push('/introduction');
+    }
   }
 }
 </script>

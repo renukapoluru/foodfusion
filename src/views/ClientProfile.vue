@@ -15,12 +15,15 @@
       <h5>{{  client.processedFoods }}</h5>
       <h4>Do you have regular meal times or do you tend to graze throughout the day?</h4>
       <h5>{{ client.mealsRegular }}</h5>
+      <client-meal-plans />
     </div>
   </div>
 </template>
 <script>
+import ClientMealPlans from './ClientMealPlans.vue'
 
 export default {
+  components: { ClientMealPlans },
   data: () => ({
     client: {
       name: 'Prita Sharma',
