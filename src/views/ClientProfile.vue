@@ -9,6 +9,12 @@
     <div class="client-info">
       <h4>{{ client.name  }}</h4>
       <h5>{{ client.type  }}</h5>
+      <h4>What does your typical daily diet look like?</h4>
+      <h5>{{ client.typicalDailyDiet }}</h5>
+      <h4>How often do you eat out or consume processed foods?</h4>
+      <h5>{{  client.processedFoods }}</h5>
+      <h4>Do you have regular meal times or do you tend to graze throughout the day?</h4>
+      <h5>{{ client.mealsRegular }}</h5>
     </div>
   </div>
 </template>
@@ -20,6 +26,9 @@ export default {
       name: 'Prita Sharma',
       type: 'Skin',
       assessmentScore: 80,
+      typicalDailyDiet: 'I have 3 meals a day and no snacks in between',
+      processedFoods: 'Every alternate day',
+      mealsRegular: 'Yes, I have regular meals'
     }
   }),
 }
@@ -48,5 +57,9 @@ export default {
     border-radius: 25px;
     z-index: 99999;
     position: relative;
+}
+
+.client-profile h4 + h5 {
+    margin-bottom: 15px;
 }
 </style>
