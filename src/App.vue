@@ -5,7 +5,7 @@
 
 
 <router-view/>
-      <div v-if="signedIn">
+      <div>
       <div class="fixed-bottom-nav" v-if="nutritionist">
         <ul>
             
