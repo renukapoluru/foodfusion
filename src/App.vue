@@ -62,7 +62,7 @@ export default {
     introDone: false
   }),
   beforeMount() {
-      if(localStorage.getItem('introDone') == "true") {
+      if(localStorage.getItem('introDone') == "true" || localStorage.getItem('userSignedIn') == "true") {
         this.introDone = true;
       if(localStorage.getItem('role') == "nutritionist") {
         this.nutritionist = true;
