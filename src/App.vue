@@ -63,6 +63,7 @@ export default {
   }),
   beforeMount() {
       if(localStorage.getItem('introDone') == "true") {
+        this.introDone = true;
       if(localStorage.getItem('role') == "nutritionist") {
         this.nutritionist = true;
       } else {
