@@ -1,5 +1,8 @@
 <template>
   <div class="assessment page-view">
+    <div class="go-back" @click="$router.go(-1)">
+    <b-icon size="is-medium" icon="chevron-left"></b-icon>
+  </div>
   <img src="@/assets/assessment.png"/>
 
     <h1>Get a free assessment</h1>
@@ -190,5 +193,9 @@ export default {
     text-transform: uppercase;
     margin-top: 35px;
     background:#9673fa;
+}
+.assessment .go-back {
+    color: #9673fa;
+    border-color: #9673fa;
 }
 </style>
