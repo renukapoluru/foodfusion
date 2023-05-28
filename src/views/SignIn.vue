@@ -10,7 +10,7 @@
     <h1>Sign In</h1>
     <div class="form-inputs">
       <b-field label="Email">
-            <b-input placeholder="Email"
+            <b-input
                 v-model="email"
                 type="email"
                 icon-right="close-circle"
@@ -22,11 +22,12 @@
         
         <b-field label="Password">
             <b-input type="password"
+                v-model="password"
                 value=""
                 password-reveal>
             </b-input>
         </b-field>
-        <b-button type="is-primary" @click="signIn()">SIGN IN</b-button>
+        <b-button :disabled="checkIfDisabled()" type="is-primary" @click="signIn()">SIGN IN</b-button>
       <h5 @click="createAccount()">Create an Account</h5>
     </div>
     <h3 class="or">OR</h3>
@@ -44,8 +45,8 @@ export default {
   props: {
   },
   data: () => ({
-    email: null,
-    password: null,
+    email: '',
+    password: '',
     // client_id is the only required property but you can add several more params, full list down bellow on the Auth api section
     params: {
         client_id: "522056815836-mtne3ap5sns3ukh8l8q0bc6t1g933uuk.apps.googleusercontent.com"
@@ -60,7 +61,7 @@ export default {
   methods: {
     signIn() {
       localStorage.setItem('userSignedIn',"true");
-      this.$router.push('/');
+      this.$router.push('/home');
     },  
     onSuccess(googleUser) {
         console.log(googleUser);
@@ -70,6 +71,13 @@ export default {
     },
     createAccount() {
       this.$router.push('/create-account');
+    },
+    checkIfDisabled() {
+      if(this.email.length && this.password.length) {
+        return false;
+      } else {
+        return true;
+      }
     }
   },
   components: { GoogleLogin }

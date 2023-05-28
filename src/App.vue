@@ -8,7 +8,7 @@
       <div class="fixed-bottom-nav" v-if="nutritionist">
         <ul>
             
-            <li><router-link to="/" exact><b-icon
+            <li><router-link to="/home" exact><b-icon
               icon="home"
                   size="is-large">
               </b-icon></router-link></li>
