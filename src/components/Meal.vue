@@ -4,7 +4,7 @@
       {{ meal.name }}
     </h4>
     <h5>{{ meal.short_description }}</h5>
-    <p>{{ meal.calories }}</p>
+    <p>{{ meal.calories }} kcal</p>
   </div>
 </template>
 
@@ -53,5 +53,18 @@ export default {
 
 .signup-flow-bottom h5 {
   margin-top: 10px;
+}
+.meals-container .single-meal {
+    text-align: left;
+    border: 1px solid;
+    padding: 10px;
+}
+
+.meals-container .single-meal h4 {
+    padding: 0;
+}
+
+.meals-container .single-meal h5 {
+    color: #a7a7a7;
 }
 </style>
